@@ -1,7 +1,7 @@
-const dotenv = require("dotenv").config();
+const fs = require("fs");
 
 // require the necessary discord.js classes
-const { Client, Intents } = require("discord.js");
+const { Client, Collection, Intents } = require("discord.js");
 const { token } = require("./config.json");
 
 //create a new client instance
