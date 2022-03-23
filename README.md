@@ -1,8 +1,12 @@
 ### Work in Progress
  
  # General knowledge bot
- Trying to create a good bot to train his knowledge
+ Trying to create a good bot to train his knowledge.
  
  
- ## Commandes du bot
+ ## Slash Commands
+ 
+- `/ping` : Check if the bot is logged in.
+- `server`: get server info.
+- `user` : get your info.
  
