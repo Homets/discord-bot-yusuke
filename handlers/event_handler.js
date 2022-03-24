@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-module.exports = (client, Discord) => {
+module.exports = (client, Discord, message) => {
   const load_dir = (dirs) => {
     const event_files = fs
       .readdirSync(`./events/${dirs}`)
@@ -10,6 +10,7 @@ module.exports = (client, Discord) => {
 
       const event_name = file.split(".")[0];
       client.on(event_name, event.bind(null, Discord, client));
+      console.log(message);
     }
   };
 
