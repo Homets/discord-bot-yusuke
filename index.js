@@ -5,9 +5,11 @@ const { Client, Collection, Intents } = require("discord.js");
 const { token } = require("./config.json");
 
 //create a new client instance
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const client = new Client({
+  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+});
 
-// Reading commands files
+// Reading Slash commands File
 client.commands = new Collection();
 const commandsFiles = fs
   .readdirSync("./commands")
@@ -19,12 +21,13 @@ for (const file of commandsFiles) {
   client.commands.set(command.data.name, command);
 }
 
-// Reading Events files
-const eventsFiles = fs
+// reading events file
+const eventFiles = fs
   .readdirSync("./events")
   .filter((file) => file.endsWith(".js"));
 
-for (const file of eventsFiles) {
+console.log(eventFiles);
+for (const file of eventFiles) {
   const event = require(`./events/${file}`);
   if (event.once) {
     client.once(event.name, (...args) => event.execute(...args));
