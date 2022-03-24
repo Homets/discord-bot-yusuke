@@ -1,41 +1,13 @@
-const fs = require("node:fs");
-// require the necessary discord.js classes
-const { Client, Collection, Intents } = require("discord.js");
+const Discord = require("discord.js");
 
+const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
 const { token } = require("./config.json");
 
-//create a new client instance
-const client = new Client({
-  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+client.commands = new Discord.Collection();
+client.events = new Discord.Collection();
+
+["command_handler", "event_handler"].forEach((handler) => {
+  require(`./handlers/${handler}`)(client, Discord);
 });
 
-// Reading Slash commands File
-client.commands = new Collection();
-const commandsFiles = fs
-  .readdirSync("./commands")
-  .filter((file) => file.endsWith(".js"));
-
-for (const file of commandsFiles) {
-  const command = require(`./commands/${file}`);
-
-  client.commands.set(command.data.name, command);
-}
-
-// reading events file
-const eventFiles = fs
-  .readdirSync("./events")
-  .filter((file) => file.endsWith(".js"));
-
-console.log(eventFiles);
-for (const file of eventFiles) {
-  const event = require(`./events/${file}`);
-  if (event.once) {
-    client.once(event.name, (...args) => event.execute(...args));
-  } else {
-    client.on(event.name, (...args) => event.execute(...args));
-  }
-}
-
-client.login(token, () => {
-  console.log("logged in");
-});
+client.login(token);
