@@ -11,7 +11,7 @@ const slashCommand_files = fs
 for (const file of slashCommand_files) {
   const slash_command = require(`./slash/${file}`);
 
-  slash_commands.push(slash_command.data.toJSON());
+  slash_commands.push(slash_command);
 }
 
 const rest = new REST({ version: 9 }).setToken(token);
