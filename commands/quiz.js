@@ -19,7 +19,7 @@ module.exports = {
       );
     } else {
       message.channel.send(
-        `Mauvaise réponse :(\nLa réponse était ${quiz[random].reponse}\nLa source: ${quiz[random].source},)`
+        `Mauvaise réponse :(\nLa réponse était ${quiz[random].response}\nLa source: ${quiz[random].source},)`
       );
     }
   },
