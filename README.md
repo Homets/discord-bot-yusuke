@@ -17,9 +17,6 @@ Trying to create a good bot to train his knowledge.
 
 #### _prefix is "!"_
 
+- `quiz`: quizz game.
+  https://imgur.com/a/8YiaTF9
 - `ping` : Respond Pong!
--
-
-##### Coming soon :
-
-- `quiz`: quizz game (Most important commands.)
