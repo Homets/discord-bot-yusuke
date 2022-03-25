@@ -10,7 +10,6 @@ module.exports = (client, Discord, message) => {
 
       const event_name = file.split(".")[0];
       client.on(event_name, event.bind(null, Discord, client));
-      console.log(message);
     }
   };
 
