@@ -39,6 +39,4 @@ source: "https://..."
 ]
 ```
 
-> > > > > > > 461abadfe76d8023e310522245b9d7e1967581c5
-
 - `ping` : Respond Pong!
