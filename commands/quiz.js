@@ -11,7 +11,8 @@ module.exports = {
     message.channel.send(quiz[random].question);
     const collected = await message.channel.awaitMessages({ filter, max: 1 });
     if (
-      collected.content.toLowerCase() === quiz[random].reponse.toLowerCase()
+      collected.first().content.toLowerCase() ===
+      quiz[random].reponse.toLowerCase()
     ) {
       message.channel.send(
         `Bonne réponse! \nLa source: ${quiz[random].source}`
