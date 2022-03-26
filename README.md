@@ -8,10 +8,7 @@ Trying to create a good bot to train his knowledge.
 
 - `/server`: get server info.
 - `/user` : get user info.
-
-##### Coming soon :
-
-- `/clear` : Clear chat.
+- `/clear` : Clear last 100 messages (actually no options)
 
 ## Prefix Commands
 
