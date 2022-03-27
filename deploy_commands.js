@@ -3,6 +3,7 @@ const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
 const { clientId, guildId, token } = require("./config.json");
 
+// reading all slash commands files
 const slash_commands = [];
 const slashCommand_files = fs
   .readdirSync("./slash/")
@@ -14,6 +15,7 @@ for (const file of slashCommand_files) {
   slash_commands.push(slash_command);
 }
 
+// use discord API to register slash commands
 const rest = new REST({ version: 9 }).setToken(token);
 
 rest

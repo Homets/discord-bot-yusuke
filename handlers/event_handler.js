@@ -1,6 +1,9 @@
 const fs = require("fs");
 
 module.exports = (client, message) => {
+  //.
+  //..
+  //... reading all events and activate them
   const load_dir = (dirs) => {
     const event_files = fs
       .readdirSync(`./events/${dirs}`)
@@ -13,5 +16,6 @@ module.exports = (client, message) => {
     }
   };
 
+  // sending all event folder to function load directory
   ["client", "guild"].forEach((e) => load_dir(e));
 };
