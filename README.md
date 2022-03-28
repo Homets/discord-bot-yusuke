@@ -18,6 +18,8 @@ Trying to create a good bot to train his knowledge.
 
 - `quiz`: quizz game :
 
+COMING SOON : Multiple choice per question like A B C D 
+
 ![9b1037670e8611cc345d34ca01210150](https://user-images.githubusercontent.com/82462804/160122864-f26b0058-563d-4f72-9479-0a31f3132337.png)
 
 #### JSON structure:
@@ -37,5 +39,6 @@ source: "https://..."
 ...
 ]
 ```
+
 
 - `ping` : Respond Pong!
