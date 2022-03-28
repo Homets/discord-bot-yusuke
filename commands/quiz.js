@@ -9,7 +9,11 @@ module.exports = {
 
     let filter = (m) => m.author.id === message.author.id;
 
-    message.channel.send(quiz[random].question);
+    // creating the question
+    let QCM = `${quiz[random].question}\n`;
+    quiz[random].possible.forEach((x) => (QCM += `${x}\n`));
+
+    message.channel.send(`${QCM}`);
     const collected = await message.channel.awaitMessages({ filter, max: 1 });
     if (
       collected.first().content.toLowerCase() ===
