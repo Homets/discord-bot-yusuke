@@ -18,7 +18,6 @@ module.exports = {
         client.command_cooldowns.add(interaction.user.id);
         setTimeout(() => {
           client.command_cooldowns.delete(interaction.user.id);
-          console.log(client.command_cooldowns);
         }, client.cooldown);
       }
     } catch (error) {
