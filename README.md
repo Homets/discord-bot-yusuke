@@ -8,7 +8,8 @@ Trying to create a good bot to train his knowledge.
 
 - `/server`: get server info.
 - `/user` : get user info.
-- `/clear` : Clear last 100 messages (actually no options)
+- `/clear` : Clear last messages.
+- `/help` : show all Slash commands name and description.
 
 ## Prefix Commands
 
