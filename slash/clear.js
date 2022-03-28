@@ -7,17 +7,18 @@ module.exports = {
   async execute(interaction, args) {
     const client = interaction.client;
     try {
-      // check interaction user permissions
+      // checking user permissions
       if (
         interaction.member.roles.cache.some(
           (role) => role.id === "956955044685676584"
         )
       ) {
-        if (client.command_cooldown.has(interaction.user.id)) {
+        if (client.command_cooldowns.has(interaction.user.id)) {
           await interaction.reply(
             "You need to wait the end of the cooldown to do this commands"
           );
         } else {
+          // deleting last 50 messages
           interaction.channel
             .bulkDelete(50)
             .then((messages) =>
@@ -26,9 +27,9 @@ module.exports = {
             .catch(console.error);
 
           // Add a cooldown
-          client.command_cooldown.add(interaction.user.id);
+          client.command_cooldowns.add(interaction.user.id);
           setTimeout(() => {
-            client.command_cooldown.delete(interaction.user.id);
+            client.command_cooldowns.delete(interaction.user.id);
           }, client.cooldown);
         }
       } else {

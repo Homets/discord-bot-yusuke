@@ -16,11 +16,25 @@ module.exports = {
           .readdirSync("./slash/")
           .filter((file) => file.endsWith(".js"));
 
+        // reading all prefix commands
+        const prefixCommands_files = fs
+          .readdirSync("./commands")
+          .filter((file) => file.endsWith(".js"));
+
         let response = "";
 
-        // parsing all slash commands info of /slash/ directory and adding them to a new string
+        // parsing all slash commands info of /slash directory and adding them to a new string
+        response += "\nSlash commands :\n";
         for (const file of slashCommands_files) {
           const command = require(`../slash/${file}`);
+          response += `- ${command.name}: ${command.description}\n`;
+        }
+
+        // parsing all prefix ocmmands info of ./commands directory and adding them to a new string
+        response += "\nPrefix commands : \n";
+
+        for (const file of prefixCommands_files) {
+          const command = require(`../commands/${file}`);
           response += `- ${command.name}: ${command.description}\n`;
         }
 

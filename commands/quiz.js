@@ -3,7 +3,7 @@ const quiz = require("../quizz.json");
 module.exports = {
   name: "quiz",
   timeout: 5000,
-  description: "start a quizz",
+  description: "start a quiz",
   async execute(client, message) {
     let random = Math.round(Math.random() * quiz.length);
 

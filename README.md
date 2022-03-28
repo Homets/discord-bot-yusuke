@@ -6,10 +6,11 @@ Trying to create a good bot to train his knowledge.
 
 ## Slash Commands
 
-- `/server`: get server info.
-- `/user` : get user info.
+- `/server`: Get server info.
+- `/user` : Get user info.
 - `/clear` : Clear last messages.
-- `/help` : show all Slash commands name and description.
+- `/help` : Show all commands name and description.
+- `giveaway`: Take a random user of this channel
 
 ## Prefix Commands
 
