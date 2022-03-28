@@ -8,9 +8,9 @@ Trying to create a good bot to train his knowledge.
 
 - `/server`: Get server info.
 - `/user` : Get user info.
-- `/clear` : Clear last messages.
+- `/clear` : Clear last messages. (need to be an administrator)
 - `/help` : Show all commands name and description.
-- `giveaway`: Take a random user of this channel
+- `giveaway`: Take a random user of this channel (need to be an administrator)
 
 ## Prefix Commands
 
