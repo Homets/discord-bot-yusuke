@@ -13,7 +13,7 @@ module.exports = {
     const collected = await message.channel.awaitMessages({ filter, max: 1 });
     if (
       collected.first().content.toLowerCase() ===
-      quiz[random].reponse.toLowerCase()
+      quiz[random].response.toLowerCase()
     ) {
       message.channel.send(
         `Bonne réponse! \nLa source: ${quiz[random].source}`

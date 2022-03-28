@@ -39,7 +39,8 @@ module.exports = {
         }
 
         await interaction.reply(
-          `Toutes les slash commands disponsible : \n ${response}`
+          `Toutes les commandes disponsible : \n ${response}`,
+          { ephemeral: true }
         );
 
         client.command_cooldowns.add(interaction.user.id);
