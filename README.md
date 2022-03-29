@@ -12,8 +12,9 @@ Trying to create a good bot to train his knowledge.
 
 ###### You can respond with the index or directly write the response ( case-insensitive)
 
-![77d440ef024d73da60b8044c24e003eb](https://user-images.githubusercontent.com/82462804/160619160-21a4f432-6fb1-4692-bb2c-348868129202.png)
+Its also possible to add args similar to question theme like `!quiz art`
 
+![77d440ef024d73da60b8044c24e003eb](https://user-images.githubusercontent.com/82462804/160619160-21a4f432-6fb1-4692-bb2c-348868129202.png)
 
 #### JSON structure:
 
@@ -23,21 +24,21 @@ Trying to create a good bot to train his knowledge.
 question : "lorem ipsum",
 possible: ["A. Lorem","B. Lorem","C. Lorem","D. Lorem"],
 response: " dolor sit amet.",
-source: "https://..."
+source: "https://...",
+theme:"Lorem"
 },
 {
 question : "lorem ipsum",
 possible: ["A. Lorem","B. Lorem","C. Lorem","D. Lorem"],
 response: " dolor sit amet.",
-source: "https://..."
+source: "https://...",
+theme:"Lorem",
 },
 ...
 ]
 ```
 
-
 - `ping` : Respond Pong!
-
 
 ## Slash Commands
 

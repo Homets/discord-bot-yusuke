@@ -11,5 +11,5 @@ module.exports = (client, message) => {
   // check if command exist
   const command = client.commands.get(cmd);
 
-  if (command) command.execute(client, message);
+  if (command) command.execute(client, message, args);
 };

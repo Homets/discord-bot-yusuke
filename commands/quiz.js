@@ -1,16 +1,21 @@
-const quiz = require("../quizz.json");
+let quiz = require("../quizz.json");
 
 module.exports = {
   name: "quiz",
   description: "start a quiz",
-  async execute(client, message) {
-    // taking a random question
+  async execute(client, message, args) {
+    // filter quiz for don't take question who don't have the args theme
+    if (args) {
+      quiz = quiz.filter((x) => x.theme === args.join(""));
+    }
+
     let random = Math.round(Math.random() * quiz.length);
 
     let filter = (m) => m.author.id === message.author.id;
 
     // creating the question
     let QCM = `${quiz[random].question}\n`;
+
     quiz[random].possible.forEach((x) => (QCM += `${x}\n`));
 
     message.channel.send(`${QCM}`);
