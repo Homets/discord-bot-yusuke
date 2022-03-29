@@ -26,11 +26,13 @@ Trying to create a good bot to train his knowledge.
 [
 {
 question : "lorem ipsum",
+possible: ["A. Lorem","B. Lorem","C. Lorem","D. Lorem"],
 response: " dolor sit amet.",
 source: "https://..."
 },
 {
 question : "lorem ipsum",
+possible: ["A. Lorem","B. Lorem","C. Lorem","D. Lorem"],
 response: " dolor sit amet.",
 source: "https://..."
 },
