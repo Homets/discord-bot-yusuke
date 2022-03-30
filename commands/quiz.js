@@ -5,8 +5,11 @@ module.exports = {
   description: "start a quiz",
   async execute(client, message, args) {
     // filter quiz for don't take question who don't have the args theme
-    if (args) {
-      quiz = quiz.filter((x) => x.theme === args.join(""));
+    if (args.length > 0) {
+      quiz = quiz.filter(
+        (x) => x.theme && x.theme.toLowerCase() === args.join("").toLowerCase()
+      );
+      console.log(quiz);
     }
 
     let random = Math.round(Math.random() * quiz.length);
